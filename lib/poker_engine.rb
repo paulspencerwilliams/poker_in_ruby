@@ -1,5 +1,6 @@
+require './lib/hand_comparer.rb'
 class PokerEngine
-  def initialize (handComparer)
+  def initialize (handComparer = HandComparer.new)
     @handComparer = handComparer
   end
   def score (hand1, hand2)
