@@ -25,3 +25,4 @@ PLATFORMS
 DEPENDENCIES
   cucumber
   rspec
+  rspec-mocks

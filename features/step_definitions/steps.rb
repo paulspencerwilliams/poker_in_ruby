@@ -1,16 +1,20 @@
-Given /^Fred has "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+require './lib/hand.rb'
+require './lib/poker_engine.rb'
+
+Given /^Fred has "(.*?)"$/ do |hand|
+  @fredsHand = Hand.new("Fred", hand.split(' '))
 end
 
 
-Given /^James has "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Given /^James has "(.*?)"$/ do |hand|
+  @jamesHand = Hand.new("James", hand.split(' '))
 end
 
 When /^they show hands$/ do
-  pending # express the regexp above with the code you wish you had
+  pokerEngine = PokerEngine.new
+  @gameResult = pokerEngine.score(@fredsHand, @jamesHand)  
 end
 
-Then /^the result will be "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then /^the result will be "(.*?)"$/ do |expected_result|
+  @gameResult.should eq(expected_result)
 end

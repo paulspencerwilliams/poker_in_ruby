@@ -1,1 +1,1 @@
-autotest: --format progress --color 
+autotest: --format progress --color --tags wip 
