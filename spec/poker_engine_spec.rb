@@ -1,9 +1,8 @@
 require './lib/poker_engine.rb'
 
-
-describe @pokerEngine do
+describe PokerEngine do
   describe "score" do
-    before (:each) do
+    before(:each) do
       @hand1 = stub("hand1")
       @hand2 = stub("hand2")
       
@@ -13,7 +12,6 @@ describe @pokerEngine do
       
       @comparison.stub(:winner) {"fred"}
       @comparison.stub(:reason) {"the reason"}
-
     end
     
     it "should invoke hand comparer" do
@@ -27,8 +25,6 @@ describe @pokerEngine do
       
       result = @pokerEngine.score(@hand1, @hand2)      
       result.should eq("fred wins. - with the reason")
-    end    
-
+    end
   end
-
 end
