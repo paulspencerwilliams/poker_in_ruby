@@ -16,8 +16,7 @@ describe PokerEngine do
     end
     
     it "should return concatenation of winner and reason from hand comparer" do
-      result = poker_engine.score(hand_1, hand_2)      
-      result.should eq("fred wins. - with the reason")
+      poker_engine.score(hand_1, hand_2).should be == "fred wins. - with the reason"
     end
   end
 end
